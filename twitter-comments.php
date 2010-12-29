@@ -188,11 +188,11 @@ function twitter_comments_settings_page() {
 } 
 
 function twitter_comments_get_short_for_post( $postId ) {
-	$shortLink = get_post_meta($postId, 'TWITTER_COMMENTS_SHORT_URL', true );
-	if (!$shortLink) {
-		$permalink = get_permalink( $postId );
-		$shortLink = file_get_contents( sprintf( get_option( 'SHORT_PATTERN' ), $permalink ) );
-		add_post_meta($postId, 'TWITTER_COMMENTS_SHORT_URL', $shortLink, true );
-	} 
+	$shortLink = get_post_meta($postId, 'shorturl', true );
+	
+	if(!$shortlink){
+		return false;
+	}
+	
 	return $shortLink;
 }
