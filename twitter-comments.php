@@ -137,7 +137,7 @@ function twitter_comments_register_mysettings() {
 	register_setting( 'twitter-comments-settings-group', 'CONSUMER_KEY' );
 	register_setting( 'twitter-comments-settings-group', 'CONSUMER_SECRET' );
 	register_setting( 'twitter-comments-settings-group', 'OAUTH_CALLBACK' );
-	register_setting( 'twitter-comments-settings-group', 'SHORT_PATTERN' );
+	//register_setting( 'twitter-comments-settings-group', 'SHORT_PATTERN' );
 }
 
 function twitter_comments_settings_page() {
@@ -163,7 +163,7 @@ function twitter_comments_settings_page() {
 		<th scope="row">Twitter OAUTH_CALLBACK</th>
 		<td><input type="text" name="OAUTH_CALLBACK" value="<?php echo get_option('OAUTH_CALLBACK'); ?>" /></td>
 		</tr>
-		
+		<!--
 		<tr valign="top">
 		<th scope="row">API URL for shortener. Use %s for the location if the long url string.</th>
 		<td>
@@ -175,6 +175,7 @@ function twitter_comments_settings_page() {
 				if (strlen($url) == 0) $url = 'http://tinyurl.com/api-create.php?url=%s';
 				echo $url; 
 			?>" /></td>
+		-->
 		</tr>
     </table>
     
